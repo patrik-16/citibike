@@ -1,0 +1,7 @@
+SELECT * FROM citibike_trips
+WHERE ride_id = '56BD148A05E26915';
+-
+SELECT COUNT(*) FROM citibike_trips;
+
+SELECT * FROM citibike_trips LIMIT 10;
+-
