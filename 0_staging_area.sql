@@ -1,4 +1,4 @@
-CREATE TABLE citibike_trips (
+CREATE TABLE stg_citibike_trips (
     ride_id VARCHAR(50),                   -- Beispiel: '56BD148A05E26915' (alphanumerisch)
     rideable_type VARCHAR(20),             -- Beispiel: 'electric_bike' (auch 'docked_bike' etc.)
     started_at TIMESTAMP,                  -- Beispiel: '01.01.2025 22:19' Startzeit der Fahrt
