@@ -48,21 +48,21 @@ df_dates["Sekunde"] = df_dates["VollesDatumUhrzeit"].dt.second
 print("Beispielhafte Zeitdimension:")
 print(df_dates.head())
 
-df_dates.to_sql("DIM_DATUM", engine, if_exists="append", index=False)
+df_dates.to_sql("dim_datum", engine, if_exists="append", index=False)
 
 # 3. Deduplizieren und Laden: DIM_KUNDE
 df_kunde = df[["member_casual"]].drop_duplicates().rename(columns={"member_casual": "Status"})
-print("DIM_KUNDE Vorschau:")
+print("dim_kunde Vorschau:")
 print(df_kunde)
 
-df_kunde.to_sql("DIM_KUNDE", engine, if_exists="append", index=False)
+df_kunde.to_sql("dim_kunde", engine, if_exists="append", index=False)
 
 # 4. Deduplizieren und Laden: DIM_FAHRRAD
 df_fahrrad = df[["rideable_type"]].drop_duplicates().rename(columns={"rideable_type": "Typ"})
-print("DIM_FAHRRAD Vorschau:")
+print("dim_fahrrad Vorschau:")
 print(df_fahrrad)
 
-df_fahrrad.to_sql("DIM_FAHRRAD", engine, if_exists="append", index=False)
+df_fahrrad.to_sql("dim_fahrrad", engine, if_exists="append", index=False)
 
 # 5. Deduplizieren und Laden: DIM_STATION
 start_stations = df[["start_station_id", "start_station_name", "start_lng", "start_lat"]].dropna()
@@ -74,6 +74,6 @@ end_stations.columns = ["Station_Code", "Name", "Längengrad", "Breitengrad"]
 df_stationen = pd.concat([start_stations, end_stations]).drop_duplicates()
 print("Anzahl eindeutiger Stationen:", len(df_stationen))
 
-df_stationen.to_sql("DIM_STATION", engine, if_exists="append", index=False)
+df_stationen.to_sql("dim_station", engine, if_exists="append", index=False)
 
 print("Transformation abgeschlossen.")
