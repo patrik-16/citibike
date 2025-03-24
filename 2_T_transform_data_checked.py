@@ -8,9 +8,6 @@ DB_NAME = "mydatabase"
 DB_USER = "myuser"
 DB_PASSWORD = "mypassword"
 
-
-
-
 # Verbindung zur PostgreSQL-Datenbank
 engine = create_engine(f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}")
 

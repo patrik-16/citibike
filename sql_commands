@@ -1,11 +1,24 @@
 SELECT * FROM stg_citibike_trips
 WHERE ride_id = '56BD148A05E26915';
 
-SELECT * FROM citibike_trips
+SELECT * FROM stg_citibike_trips
 WHERE ride_id = 'C2BBDB9AE51DF5C7';
 
 -
 SELECT COUNT(*) FROM citibike_trips;
 
-SELECT * FROM citibike_trips LIMIT 10;
+
+
 SELECT * FROM stg_citibike_trips LIMIT 10;
+SELECT * FROM dim_datum LIMIT 10;
+SELECT * FROM dim_fahrrad LIMIT 10;
+SELECT * FROM dim_kunde LIMIT 10;
+SELECT * FROM dim_station LIMIT 10;
+SELECT * FROM fact_fahrt LIMIT 10;
+
+DROP TABLE fact_fahrt;
+DROP TABLE dim_datum;
+DROP TABLE dim_fahrrad;
+DROP TABLE dim_kunde;
+DROP TABLE dim_station;
+DROP TABLE stg_citibike_trips;
