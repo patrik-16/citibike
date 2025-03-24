@@ -22,3 +22,14 @@ DROP TABLE dim_fahrrad;
 DROP TABLE dim_kunde;
 DROP TABLE dim_station;
 DROP TABLE stg_citibike_trips;
+
+
+
+SELECT * FROM fact_fahrt
+WHERE ride_id = '56BD148A05E26915';
+
+SELECT * FROM fact_fahrt
+WHERE ride_id = '591B9424B33B309A';
+
+SELECT * FROM dim_station
+WHERE station_id = '1726';
