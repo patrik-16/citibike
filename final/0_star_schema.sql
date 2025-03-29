@@ -29,7 +29,7 @@ CREATE TABLE dim_station (
 );
 
 CREATE TABLE fact_fahrt (
-    fahrt_id SERIAL PRIMARY KEY, -- SK (PK)
+    PRIMARY KEY (startdatum_id, enddatum_id, kunde_id, startstation_id, endstation_id, fahrrad_id),
     ride_id VARCHAR(50) UNIQUE,   -- BK
     startdatum_id INT REFERENCES dim_datum(datum_id),
     enddatum_id INT REFERENCES dim_datum(datum_id),
