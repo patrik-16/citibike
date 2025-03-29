@@ -4,7 +4,7 @@ WHERE ride_id = '56BD148A05E26915';
 SELECT * FROM stg_citibike_trips
 WHERE ride_id = 'C2BBDB9AE51DF5C7';
 
--
+
 SELECT COUNT(*) FROM citibike_trips;
 
 
